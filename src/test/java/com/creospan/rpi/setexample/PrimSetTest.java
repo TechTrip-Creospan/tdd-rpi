@@ -18,16 +18,16 @@ class PrimSetTest {
         primSet = new PrimSet();
     }
 
-    @DisplayName("Test that the Set can hold an Object")
     @Test
+    @DisplayName("Test that the Set can hold an Object")
     void testThatSetCanHoldAnObject() {
         String someString = "someString";
         primSet.add(someString);
         assertThat(primSet.contains(someString)).isTrue();
     }
 
-    @DisplayName("Test that the Set cannot hold nulls")
     @Test
+    @DisplayName("Test that the Set cannot hold nulls")
     void TestThatSetCannotContainNulls() {
         NullPointerException nullPointerException = assertThrows(NullPointerException.class, () -> {
             primSet.add(null);
@@ -36,8 +36,8 @@ class PrimSetTest {
         assertThat(nullPointerException.getMessage()).isEqualTo(PrimSet.NO_NULLS_MESSAGE);
     }
 
-    @DisplayName("Test that the Set cannot hold duplicate values")
     @Test
+    @DisplayName("Test that the Set cannot hold duplicate values")
     void testThatSetCannotHoldDuplicates() {
 
         // Think About how to test This
@@ -53,8 +53,8 @@ class PrimSetTest {
 
     }
 
-    @DisplayName("Test that we can put a number of objects in the Set")
     @Test
+    @DisplayName("Test that we can put a number of objects in the Set")
     void testTHatWeCanPutANumberOfObjectsInTheSet() {
         String[] someStrings = {"String1", "String2", "String3"};
 
@@ -69,22 +69,22 @@ class PrimSetTest {
         });
     }
 
-    @DisplayName("Test that the Set is Empty")
     @Test
+    @DisplayName("Test that the Set is Empty")
     void testThatTheSetIsEmpty() {
         assertThat(primSet.isEmpty()).isTrue();
     }
 
-    @DisplayName("Test that we can clear the Set")
     @Test
+    @DisplayName("Test that we can clear the Set")
     void tesThatWeCanClearTheSet() {
         primSet.clear();
         assertThat(primSet.size()).isEqualTo(0);
         assertThat(primSet.isEmpty()).isTrue();
     }
 
-    @DisplayName("Test that we can remove and Object from the Set")
     @Test
+    @DisplayName("Test that we can remove and Object from the Set")
     void testThatWeCanRemoveAnObjectFromTheSet() {
         String[] someStrings = {"String1", "String2", "String3"};
 
