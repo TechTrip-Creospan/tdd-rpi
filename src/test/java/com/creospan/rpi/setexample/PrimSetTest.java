@@ -1,6 +1,5 @@
 package com.creospan.rpi.setexample;
 
-import jdk.jfr.Description;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,7 @@ class PrimSetTest {
         primSet = new PrimSet();
     }
 
-    @DisplayName("TEST")
+    @DisplayName("Test that the Set can hold an Object")
     @Test
     void testThatSetCanHoldAnObject() {
         String someString = "someString";
@@ -27,6 +26,7 @@ class PrimSetTest {
         assertThat(primSet.contains(someString)).isTrue();
     }
 
+    @DisplayName("Test that the Set cannot hold nulls")
     @Test
     void TestThatSetCannotContainNulls() {
         NullPointerException nullPointerException = assertThrows(NullPointerException.class, () -> {
@@ -36,6 +36,7 @@ class PrimSetTest {
         assertThat(nullPointerException.getMessage()).isEqualTo(PrimSet.NO_NULLS_MESSAGE);
     }
 
+    @DisplayName("Test that the Set cannot hold duplicate values")
     @Test
     void testThatSetCannotHoldDuplicates() {
 
@@ -52,6 +53,7 @@ class PrimSetTest {
 
     }
 
+    @DisplayName("Test that we can put a number of objects in the Set")
     @Test
     void testTHatWeCanPutANumberOfObjectsInTheSet() {
         String[] someStrings = {"String1", "String2", "String3"};
@@ -67,11 +69,13 @@ class PrimSetTest {
         });
     }
 
+    @DisplayName("Test that the Set is Empty")
     @Test
     void testThatTheSetIsEmpty() {
         assertThat(primSet.isEmpty()).isTrue();
     }
 
+    @DisplayName("Test that we can clear the Set")
     @Test
     void tesThatWeCanClearTheSet() {
         primSet.clear();
@@ -79,6 +83,7 @@ class PrimSetTest {
         assertThat(primSet.isEmpty()).isTrue();
     }
 
+    @DisplayName("Test that we can remove and Object from the Set")
     @Test
     void testThatWeCanRemoveAnObjectFromTheSet() {
         String[] someStrings = {"String1", "String2", "String3"};
